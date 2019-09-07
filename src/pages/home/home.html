@@ -1,14 +1,165 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <ion-title>
-      Ionic Blank
+      Daily Wishes
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <!-- <ion-refresher (ionRefresh)="refreshData($event)">
+      <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to reload data"
+      refreshingSpinner="circles"
+      refreshingText="Loading...">
+    </ion-refresher-content>
+  </ion-refresher> -->
+  
+  <ion-slides pager style="height: 85%">
+    <ion-slide>
+        <ion-card style="height: 91%;">
+            <ion-card-header style='background-color:#1f803c;'>
+                <h1 style="color: white"><b>Recurring events</b></h1>
+              </ion-card-header>
+            <ion-card-content>
+              <ion-row>
+                <ion-col col-6>
+                  <button ion-button outline style="width:95%"  (click)="loadMedia()">Load Photos</button>
+                </ion-col>
+                <ion-col col-3 text-center>
+                  <h2><b>Time</b></h2>
+                </ion-col>
+                <ion-col col-3 text-center>
+                  <h2><b>Images</b></h2>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <button style="width:10%" ion-button icon-only outline (click)="whatsappShare('Morning')"><ion-icon name="logo-whatsapp"></ion-icon></button>
+                <button style="width:87%"  ion-button outline (click)="setMorningTime()">
+                  <ion-col col-6 text-left>          
+                    <h2>Morning</h2>
+                  </ion-col>
+                  <ion-col col-3 text-center>
+                    <h2>{{GoodMorning.Time}}</h2>
+                  </ion-col>
+                  <ion-col col-3 text-right>
+                    <h2>{{GoodMorning.Current}}/{{GoodMorning.Count}}</h2>
+                  </ion-col>
+                </button>
+              </ion-row>
+              <ion-row>
+                <button style="width:10%" ion-button icon-only outline (click)="whatsappShare('Afternoon')"><ion-icon name="logo-whatsapp"></ion-icon></button>
+                <button style="width:87%"  ion-button outline (click)="setAfternoonTime()">
+                  <ion-col col-6 text-left>          
+                    <h2>Afternoon</h2>
+                  </ion-col>
+                  <ion-col col-3 text-center>
+                    <h2>{{GoodAfternoon.Time}}</h2>
+                  </ion-col>
+                  <ion-col col-3 text-right>
+                    <h2>{{GoodAfternoon.Current}}/{{GoodAfternoon.Count}}</h2>
+                  </ion-col>
+                </button>
+              </ion-row>
+              <ion-row>
+                <button style="width:10%" ion-button icon-only outline (click)="whatsappShare('Evening')"><ion-icon name="logo-whatsapp"></ion-icon></button>
+                <button style="width:87%"  ion-button outline (click)="setEveningTime()">
+                  <ion-col col-6 text-left>          
+                    <h2>Evening</h2>
+                  </ion-col>
+                  <ion-col col-3 text-center>
+                    <h2>{{GoodEvening.Time}}</h2>
+                  </ion-col>
+                  <ion-col col-3 text-right>
+                    <h2>{{GoodEvening.Current}}/{{GoodEvening.Count}}</h2>
+                  </ion-col>
+                </button>
+              </ion-row>
+              <ion-row>
+                <button style="width:10%" ion-button icon-only outline (click)="whatsappShare('Night')"><ion-icon name="logo-whatsapp"></ion-icon></button>
+                <button style="width:87%"  ion-button outline (click)="setNightTime()">
+                  <ion-col col-6 text-left>          
+                    <h2>Night</h2>
+                  </ion-col>
+                  <ion-col col-3 text-center>
+                    <h2>{{GoodNight.Time}}</h2>
+                  </ion-col>
+                  <ion-col col-3 text-right>
+                    <h2>{{GoodNight.Current}}/{{GoodNight.Count}}</h2>
+                  </ion-col>
+                </button>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6>
+                    <button ion-button round style="width:100%" (click)="schedule(0)">Schedule</button>
+                </ion-col>
+                <ion-col col-6>
+                    <button ion-button round style="width:100%" (click)="clearSchedule()">Clear Schedules</button><br/>
+                </ion-col>
+              </ion-row>
+              <br/>
+            </ion-card-content>
+          </ion-card>
+    </ion-slide>
+    
+    <ion-slide >
+        <ion-card style="height: 91%;">
+          <ion-card-header style='background-color:#1f803c;'>
+            <h1 style="color: white"><b>One time events</b></h1>
+          </ion-card-header>
+          <ion-card-content>
+              <ion-scroll scrollY="true"> 
+              <ion-list>
+                  <ion-item-group style="border: #488aff solid; margin-top: 5px" *ngFor="let oneEvent of OneTimeEvents">
+                    <ion-item-divider color="primary">
+                      <!-- <ion-input value={{oneEvent.Id}}.{{oneEvent.Text}} (input)="setTitleOTE(oneEvent, $event.target.value)"></ion-input> -->
+                      <ion-icon item-right name="trash" (click)="deleteOTE(oneEvent)"></ion-icon>
+                    </ion-item-divider>
+                    <ion-row>
+                      <ion-col col-7>
+                          <button style="width: 95%" ion-button outline (click)="setDateOTE(oneEvent)">
+                              <h2>Date : {{oneEvent.ScheduleDate}}</h2>
+                          </button>
+                          <button style="width: 95%" ion-button outline (click)="setTimeOTE(oneEvent)">
+                              <h2>Time : {{oneEvent.Time}}</h2>
+                          </button>
+                      </ion-col>
+                      <ion-col col-5>
+                          <button style="width: 95%; height: 90%; border:solid blue" ion-button outline (click)="pickOneImageOTE(oneEvent)">
+                            <img width="75px" height="75px" src="data:image/png;base64,{{oneEvent.ImagePath}}" alt="Image">
+                          </button>
+                      </ion-col>
+                    </ion-row>
+                  </ion-item-group>
+                </ion-list>
+              </ion-scroll>
+              <ion-row>
+                <ion-col col-6>
+                    <button ion-button round style="width:100%" (click)="scheduleOTE()">Save Events</button>
+                </ion-col>
+                <ion-col col-6>
+                    <button ion-button round style="width:100%" (click)="addOneTimeEvent()">Add New</button>
+                </ion-col>
+              </ion-row>
+          </ion-card-content>
+        </ion-card>
+    </ion-slide>
+  </ion-slides>
+  
+  
+  <br/>
+  <ion-row>
+    <ion-col col-6>
+        <button ion-button round style="width:90%" (click)="exportDB()">Export DB</button>
+    </ion-col>
+    <ion-col col-6 text-right>
+        <button ion-button round style="width:90%" (click)="importDB()">Import DB</button><br/>
+    </ion-col>
+  </ion-row>  
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title text-center>Next notification  :  {{ScheduleDate}}</ion-title>
+  </ion-toolbar>
+</ion-footer>
