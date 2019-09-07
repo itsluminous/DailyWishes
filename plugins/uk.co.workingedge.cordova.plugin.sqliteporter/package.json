@@ -1,0 +1,80 @@
+{
+  "_from": "uk.co.workingedge.cordova.plugin.sqliteporter",
+  "_id": "uk.co.workingedge.cordova.plugin.sqliteporter@1.0.5",
+  "_inBundle": false,
+  "_integrity": "sha1-tK9dneKOBmqJoEpuQvU+wqZpB78=",
+  "_location": "/uk.co.workingedge.cordova.plugin.sqliteporter",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "uk.co.workingedge.cordova.plugin.sqliteporter",
+    "name": "uk.co.workingedge.cordova.plugin.sqliteporter",
+    "escapedName": "uk.co.workingedge.cordova.plugin.sqliteporter",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/uk.co.workingedge.cordova.plugin.sqliteporter/-/uk.co.workingedge.cordova.plugin.sqliteporter-1.0.5.tgz",
+  "_shasum": "b4af5d9de28e066a89a04a6e42f53ec2a66907bf",
+  "_spec": "uk.co.workingedge.cordova.plugin.sqliteporter",
+  "_where": "C:\\Users\\kumarp\\Music\\DailyWishes",
+  "author": {
+    "name": "Dave Alden"
+  },
+  "bugs": {
+    "url": "https://github.com/dpa99c/cordova-sqlite-porter/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "uk.co.workingedge.cordova.plugin.sqliteporter",
+    "platforms": [
+      "android",
+      "amazon-fireos",
+      "ios",
+      "blackberry10",
+      "wp7",
+      "wp8",
+      "windows8",
+      "windows",
+      "tizen",
+      "browser"
+    ]
+  },
+  "cordova_name": "sqlite porter",
+  "deprecated": false,
+  "description": "Enables importing/exporting of SQLite databases to/from JSON/SQL.",
+  "homepage": "https://github.com/dpa99c/cordova-sqlite-porter#readme",
+  "issue": "https://github.com/dpa99c/cordova-sqlite-porter/issues",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova",
+    "android",
+    "fireos",
+    "ios",
+    "blackberry",
+    "wp7",
+    "windows phone 8",
+    "windows 8",
+    "windows",
+    "tizen",
+    "browser",
+    "phonegap",
+    "database",
+    "sqlite",
+    "websql",
+    "import",
+    "export"
+  ],
+  "license": "MIT",
+  "name": "uk.co.workingedge.cordova.plugin.sqliteporter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpa99c/cordova-sqlite-porter.git"
+  },
+  "version": "1.0.5"
+}

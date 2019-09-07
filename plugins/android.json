@@ -1,0 +1,61 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-photo-library": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-datepicker": {
+      "PACKAGE_NAME": "io.daily.wishes"
+    },
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "io.daily.wishes"
+    },
+    "uk.co.workingedge.cordova.plugin.sqliteporter": {
+      "PACKAGE_NAME": "io.daily.wishes"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-telerik-imagepicker": {
+      "PACKAGE_NAME": "io.daily.wishes"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    }
+  }
+}
